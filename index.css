@@ -1,0 +1,75 @@
+
+h1{
+    font-family: Berkshire Swash;
+    text-decoration: underline;
+    font-size: 400%;
+}
+
+p{
+    font-family: Snowburst One;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+section{
+    width: 75vw;
+}
+
+#spriteDiv{
+    width: 35vw;
+}
+
+footer{
+    background-image: url("Resources/order/orderBg.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 25vh;
+    height: 25vh;
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    border-top: 0.75vh solid #cf8d64;
+}
+
+footer, main, body,h1{
+    margin: 0px;
+}
+
+section, #spriteDiv{
+    height: 75vh;
+}
+
+#sprite{
+    width: 35vw;
+    height: 75vh;
+}
+
+#textBox{
+    margin-top: 15vh;
+    margin-left:8vw;
+    display: flexbox;
+    justify-self: center;
+    align-self: center;
+    background-color: gray;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 3vw;
+    border: 0.75vh solid black;
+}
+
+#acknowledgeDialouge{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#dialouge{
+    height: 25vh;
+    width: 50vw;
+    flex-wrap: wrap;
+}
+
+.hidden{
+    visibility: hidden;
+}

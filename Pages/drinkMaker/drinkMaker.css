@@ -1,0 +1,57 @@
+footer{
+    display: flex;
+    background-image: url("/Resources/drinkMaker/nonDrinks/drinkBg.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vw 25vh;
+    height: 25vh;
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    border-top: 0.75vh solid #ffac93;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow: scroll;
+}
+
+footer, body{
+    margin: 0px;
+}
+
+div{
+    justify-items: center;
+    flex-direction: column;
+    background: transparent;
+    backdrop-filter: hue-rotate(50deg) brightness(3) saturate(0.05);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 0.75vh #593621;
+    border-radius: 2vw;
+    height: 10vw;
+    width: 12vw;
+    margin: 1vh;
+    padding: 0;
+}
+
+#chosen{
+    background: transparent;
+    backdrop-filter: hue-rotate(60deg) brightness(1.5) saturate(0.25);
+}
+
+#backArrow{
+    transform: scaleX(-1);
+}
+
+.ingreIcon{
+    width: 12vw;
+    height: 8.25vw;
+}
+
+.ingreIcon, p{
+    margin: 0;
+}
+
+p{
+    font-family: Berkshire Swash;
+    color: #593621;
+    text-align: center;
+}

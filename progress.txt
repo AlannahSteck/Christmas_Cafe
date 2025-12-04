@@ -1,0 +1,67 @@
+11/3/25
+ -Planned out customers
+ -Planned out different drinks
+ -Concept Sketches of customer order screen and hot chocolate making screen
+ -Started Ferret Guy Sprite
+
+11/4/25
+ -Concept Sketches of customer order screen(redo) and end of day screen
+ -Revised customer list
+ -created the customer order screen page
+ -Html for the customer order screen page
+ -Css for the customer order screen page
+
+11/5/25
+ -Css for the customer order screen page
+
+11/9/25
+ -Ferret Guy Sprite
+
+11/12/25
+ -Css for the customer order screen page
+ -created drink maker page
+ -Css for the drink maker screen page
+ -Html for the drink maker screen page
+ -Js for the drink maker screen page (genSelections())
+
+11/17/25
+ -Js for the drink maker screen page (genSelections(), changeButtons())
+
+11/18/25
+ -Js for the drink maker screen page (changeButtons(), addToDrink(), findPageNum())
+
+11/19/25
+ -Js for the drink maker screen page (changeButtons(), addToDrink(), genSelections())
+
+11/20/25
+ -Js for the drink maker screen page (genSelections())
+ -Js for the order screen page (genSess())
+
+11/21/25
+ -Js for the drink maker screen page (genSelections(),addToDrink())
+ -Js for item.js (class item)
+
+11/24/25
+ -created item.js
+ -Js for the item.js (class Item)
+ -Js for the order screen (import class Item)
+
+11/25/25
+ -deleted item.js
+ -Js for the order screen (genOrder(),changeOrder(),gradeOrder(),afterOrderSess(), changeVisible(), changeAcknowledgeButton(), changeToNext())
+ -Css for the customer order screen page
+
+11/26/25
+ -7/15 food icons finished
+ -2/2 counter bgs finished
+ -Css for the customer order screen page
+ -js for the customer order screen page(genOrder(),gradeOrder(),changeOrder())
+ -Css for the drink maker screen page
+ -html for the drink maker screen page
+ -js for the drink maker screen page (genSelections(),addToDrink(),finalArrow(),findSelection(),doneButton())
+
+11/27/25
+ -js for the drink maker screen page (genSelections(),addToDrink(),finalArrow())
+
+12/4/25
+ -upload files to vs code
