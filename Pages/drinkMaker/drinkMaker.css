@@ -1,6 +1,6 @@
 footer{
     display: flex;
-    background-image: url("/Resources/drinkMaker/nonDrinks/drinkBg.jpeg");
+    background-image: url("../../Resources/drinkMaker/nonDrinks/drinkBg.jpeg");
     background-repeat: no-repeat;
     background-size: 100vw 25vh;
     height: 25vh;

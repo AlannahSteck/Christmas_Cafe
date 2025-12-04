@@ -14,7 +14,7 @@ function genSelections(optionList = optionsOne){
     if(optionList != optionsOne){
       const arrowIcon = document.createElement("img");
       arrowIcon.alt = "Go Back";
-      arrowIcon.src = "/Resources/drinkMaker/nonDrinks/arrow.png";
+      arrowIcon.src = "../../Resources/drinkMaker/nonDrinks/arrow.png";
       arrowIcon.id = "backArrow";
       arrowIcon.setAttribute("onclick", `changeButtons("${pageNum}","back")`);
       footer.appendChild(arrowIcon);
@@ -32,7 +32,7 @@ function genSelections(optionList = optionsOne){
             newOptionDiv.id = "chosen";
         }
         let iconSrcFileName = optionList[i].replace(" ","_");
-        icon.src = "/Resources/drinkMaker/nonDrinks/"+iconSrcFileName+".png"
+        icon.src = "../../Resources/drinkMaker/nonDrinks/"+iconSrcFileName+".png"
         icon.className = "ingreIcon"
         icon.setAttribute("onclick", `addToDrink(this, ${pageNum}, "${currentSelection}")`);
     }
@@ -47,7 +47,7 @@ function genSelections(optionList = optionsOne){
 function finalArrow(pageNum){
     const finalIcon = document.createElement("img");
     finalIcon.alt = "Continue";
-    finalIcon.src = "/Resources/drinkMaker/nonDrinks/arrow.png";
+    finalIcon.src = "../../Resources/drinkMaker/nonDrinks/arrow.png";
     finalIcon.setAttribute("onclick", `changeButtons("${pageNum}","forward")`);
     footer.appendChild(finalIcon);
 }
@@ -55,9 +55,9 @@ function finalArrow(pageNum){
 function doneButton(){
     const finalIcon = document.createElement("img");
     const backToOrder = document.createElement("a");
-    backToOrder.href = "/index.html"
+    backToOrder.href = "../../index.html"
     finalIcon.alt = "Done";
-    finalIcon.src = "/Resources/drinkMaker/nonDrinks/done.png";
+    finalIcon.src = "../../Resources/drinkMaker/nonDrinks/done.png";
     backToOrder.appendChild(finalIcon);
     footer.appendChild(backToOrder);
 }
