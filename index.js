@@ -1,6 +1,7 @@
 //sess storage should be [ordersLeft, goodOrds, okOrds, badOrds, requestedSize, requestedChocolate, requestedToppings, requestedAddons, selectedSize(=medium), selectedChocolate(=milk), selectedToppings(=none), selectedAddons(=none)]
 //sess storage should be reset after each order except keys 1-4 which reset each after a day and are saved to cookies
 const textbox = document.getElementById("dialouge");
+const customerName = document.getElementsByClassName("h1")[0]
 
 class Item{
     constructor(itemName, phrases){
@@ -19,9 +20,35 @@ class Item{
     
 }
 
+class Customer{
+    constructor(charName, size){
+        this.name = charName;;
+        this.size = size
+        this.imgLink = getImgLink();
+    }
+
+    getImgLink(){
+      const linkName = this.name.replace(" ","_");
+      return "Resources/order/" + linkName + ".png";
+    }
+}
+
+function genCustomers(){
+    let customersStorage = []
+    names = ["Santa-Tall","Elf-Medium","Reindeer-Tall","Snowman-Medium","Gingerbread Man-Small","Yule Cat-Tall","Turtle Dove-Small","Lily-Medium","Mrs Claus-Tall","The Grinch-Tall","Ferret Guy-Small","Conner-Medium"];
+    for (let i=0;i<names.length;i++){
+        const dataList = names[i].split("-");
+        const newGuy = new Customer(dataList[0],dataList[i])
+        customersStorage.push(newGuy)
+    }
+    return customersStorage
+}
+
 function genSess(){
+    const customersStorage = genCustomers()
     if(sessionStorage.length == 0){
-        const addKeys  = ["ordersLeft", "goodOrds", "okOrds", "badOrds", "requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons", "selectedSize", "selectedChocolate", "selectedToppings", "selectedAddons"];
+        const currentCustomer = Math.floor(Math.random() * customersStorage.length); 
+        const addKeys  = ["ordersLeft", "goodOrds", "okOrds", "badOrds", "requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons", "selectedSize", "selectedChocolate", "selectedToppings", "selectedAddons","customer"];
         for (let i=0;i<addKeys.length;i++){
             if (i==0){
                 var val = 5;
@@ -40,7 +67,6 @@ function genSess(){
 
 function genOrder(){
     if (sessionStorage.getItem("requestedSize") == "null"){
-    console.log("iuhfgh")
     const optionsOne = ["Small-I want a small._I'm not very thirsty._I'm on a diet._I want 6 oz of hot chocolate.","Medium-I want a medium._I'm kind of thirsty._I want a decent amount of hot chocolate but nothing too expensive._I want 8 oz of hot chocolate.","Large-I need the biggest size you got!_I'm really thirsty._I'm absolutely freezing!_I want 10 oz of hot chocolate."]; //size
     const optionsTwo = ["White-Give me white chocolate._Give me chocolate that's creamy but not too milky._I also want to try something different so give me the least popular kind of chocolate you have._I don't want any chocolate in my hot chocolate.","Milk-Give me milk chocolate._Give me chocolate that's sweet but don't give me white chocolate._Give me the most popular kind of chocolate you have._Give me.. I forgot the name. You know the chocolate that matches the color of coffee? Give me that one.","Dark-Give me dark chocolate._I'm craving some bitter chocolate._Give me the healthiest chocolate you have._Give me that MrBeast Bar flavored chocolate."]; //chocolate type
     const optionsThree = ["Marshmallow-Put marshmallows on top._I'm in the mood for something light and fluffy._Put that cushion in my drink._I'm kind of craving smores.","Whip Cream-Put whip cream on top._I'm in the mood for something soft and creamy._Top it some Chantilly._Could you give me topping that reminds me of my time in Italy?","None-Don't give me a topping._I'm not really craving anything.__Don't add any toppings that are creamy or fluffy."]; //Toppings
