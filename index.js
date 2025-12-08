@@ -1,7 +1,8 @@
 //sess storage should be [ordersLeft, goodOrds, okOrds, badOrds, requestedSize, requestedChocolate, requestedToppings, requestedAddons, selectedSize(=medium), selectedChocolate(=milk), selectedToppings(=none), selectedAddons(=none)]
 //sess storage should be reset after each order except keys 1-4 which reset each after a day and are saved to cookies
 const textbox = document.getElementById("dialouge");
-const customerName = document.getElementsByClassName("h1")[0]
+const customerName = document.getElementsByTagName("h1")[0];
+const theSprite = document.getElementById("sprite");
 
 class Item{
     constructor(itemName, phrases){
@@ -24,7 +25,15 @@ class Customer{
     constructor(charName, size){
         this.name = charName;;
         this.size = size
-        this.imgLink = getImgLink();
+        this.imgLink = this.getImgLink();
+    }
+
+    giveName(){
+      return this.name;
+    }
+
+    giveImgLink(){
+      return this.imgLink;
     }
 
     getImgLink(){
@@ -35,7 +44,8 @@ class Customer{
 
 function genCustomers(){
     let customersStorage = []
-    names = ["Santa-Tall","Elf-Medium","Reindeer-Tall","Snowman-Medium","Gingerbread Man-Small","Yule Cat-Tall","Turtle Dove-Small","Lily-Medium","Mrs Claus-Tall","The Grinch-Tall","Ferret Guy-Small","Conner-Medium"];
+    const names = ["Conner-Tall","Lily-Medium","Yule Cat-Tall"]
+    //const names = ["Santa-Tall","Elf-Medium","Reindeer-Tall","Snowman-Medium","Gingerbread Man-Small","Turtle Dove-Small","Mrs Claus-Tall","The Grinch-Tall","Ferret Guy-Small"];
     for (let i=0;i<names.length;i++){
         const dataList = names[i].split("-");
         const newGuy = new Customer(dataList[0],dataList[i])
@@ -47,7 +57,6 @@ function genCustomers(){
 function genSess(){
     const customersStorage = genCustomers()
     if(sessionStorage.length == 0){
-        const currentCustomer = Math.floor(Math.random() * customersStorage.length); 
         const addKeys  = ["ordersLeft", "goodOrds", "okOrds", "badOrds", "requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons", "selectedSize", "selectedChocolate", "selectedToppings", "selectedAddons","customer"];
         for (let i=0;i<addKeys.length;i++){
             if (i==0){
@@ -63,6 +72,24 @@ function genSess(){
         }
     }
     console.log(sessionStorage);
+    getCustomer(customersStorage)
+}
+
+function getCustomer(customersStorage){
+    if (sessionStorage.getItem("customer") == "null"){
+        console.log("new customer exists")
+        const theIndex = Math.floor(Math.random() * customersStorage.length); 
+        var chosen = customersStorage[theIndex]
+        sessionStorage.setItem("customer", theIndex)
+    }
+    else{
+        const theIndex = Number(sessionStorage.getItem("customer"))
+        var chosen = customersStorage[theIndex]
+        console.log("old customer")
+    }
+    customerName.textContent = chosen.giveName()
+    theSprite.src = chosen.giveImgLink()
+
 }
 
 function genOrder(){
@@ -138,7 +165,7 @@ function gradeOrder(){
 }
 
 function afterOrderSess(){
-   const resetThese =["requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons", "selectedSize", "selectedChocolate", "selectedToppings", "selectedAddons"];
+   const resetThese =["requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons", "selectedSize", "selectedChocolate", "selectedToppings", "selectedAddons","customer"];
    for (let i=0;i<resetThese.length;i++){
     sessionStorage.setItem(resetThese[i],null);
    }
@@ -182,6 +209,8 @@ function changeAcknowledgeButton(makeLink){
 }
 
 function changeToNext(){
+    const customersStorage = genCustomers()
+    getCustomer(customersStorage)
     changeVisible(true);
     setTimeout(() => {
     genOrder()

@@ -71,3 +71,10 @@
 12/5/25
  -created character class
  -js for the customer order screen page(genCustomers(),genSess())
+
+12/7/25
+ -3/12 customer drawings finished
+
+12/8/25
+ -edited character class
+ -js for the customer order screen page(genCustomers(),genSess(),genOrder(),changeAcknowledgeButton())
