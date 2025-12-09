@@ -44,8 +44,8 @@ class Customer{
 
 function genCustomers(){
     let customersStorage = []
-    const names = ["Conner-Tall","Lily-Medium","Yule Cat-Tall"]
-    //const names = ["Santa-Tall","Elf-Medium","Reindeer-Tall","Snowman-Medium","Gingerbread Man-Small","Turtle Dove-Small","Mrs Claus-Tall","The Grinch-Tall","Ferret Guy-Small"];
+    const names = ["Conner-Medium","Lily-Medium","Yule Cat-Tall","Frosty the Snowman-Medium","Santa-Tall","Hermey the Elf-Medium",]
+    //const names = ["Reindeer-Tall","Gingerbread Man-Small","Turtle Dove-Small","Mrs Claus-Tall","The Grinch-Tall","Ferret Guy-Small"];
     for (let i=0;i<names.length;i++){
         const dataList = names[i].split("-");
         const newGuy = new Customer(dataList[0],dataList[i])
