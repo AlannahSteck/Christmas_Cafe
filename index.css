@@ -23,14 +23,14 @@ section{
 }
 
 footer{
-    background-image: url("Resources/order/orderBg.png");
+    background-color: #8b5939;
     background-repeat: no-repeat;
     background-size: 100vw 25vh;
     height: 25vh;
     width: 100vw;
     bottom: 0;
     position: fixed;
-    border-top: 0.75vh solid #cf8d64;
+    border-top: 0.75vh solid #553622;
 }
 
 footer, main, body,h1{
@@ -38,13 +38,32 @@ footer, main, body,h1{
 }
 
 section, #spriteDiv{
+    display: flex;
+    justify-content: center;
     height: 75vh;
 }
 
-#sprite{
-    width: 35vw;
-    height: 75vh;
+.sprite{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25vh;
 }
+
+#Tall{
+    height: 40vw;
+    width: 40vw;
+}
+
+#Medium{
+    height: 32.5vw;
+    width: 32.5vw;
+}
+
+#Small{
+    height: 20vw;
+    width: 20vw;
+}
+
 
 #textBox{
     margin-top: 15vh;

@@ -2,7 +2,7 @@
 //sess storage should be reset after each order except keys 1-4 which reset each after a day and are saved to cookies
 const textbox = document.getElementById("dialouge");
 const customerName = document.getElementsByTagName("h1")[0];
-const theSprite = document.getElementById("sprite");
+const theSprite = document.getElementsByClassName("sprite")[0];
 
 class Item{
     constructor(itemName, phrases){
@@ -32,12 +32,17 @@ class Customer{
       return this.name;
     }
 
+    giveSize(){
+      return this.size;
+    }
+
     giveImgLink(){
       return this.imgLink;
     }
 
     getImgLink(){
-      const linkName = this.name.replace(" ","_");
+      const linkName = this.name.replaceAll(" ","_");
+      console.log(linkName)
       return "Resources/order/" + linkName + ".png";
     }
 }
@@ -48,7 +53,7 @@ function genCustomers(){
     //const names = ["Reindeer-Tall","Gingerbread Man-Small","Turtle Dove-Small","Mrs Claus-Tall","The Grinch-Tall","Ferret Guy-Small"];
     for (let i=0;i<names.length;i++){
         const dataList = names[i].split("-");
-        const newGuy = new Customer(dataList[0],dataList[i])
+        const newGuy = new Customer(dataList[0],dataList[1])
         customersStorage.push(newGuy)
     }
     return customersStorage
@@ -89,6 +94,8 @@ function getCustomer(customersStorage){
     }
     customerName.textContent = chosen.giveName()
     theSprite.src = chosen.giveImgLink()
+    theSprite.removeAttribute("id")
+    theSprite.id = chosen.giveSize()
 
 }
 
@@ -175,14 +182,13 @@ function afterOrderSess(){
 }
 
 function changeVisible(hide){
-    const charSprite = document.getElementById("sprite");
     const dialougeBox = document.getElementById("textBox");
     if (hide==true){
-        charSprite.className = "hidden";
+        theSprite.classList.add("hidden");
         dialougeBox.className = "hidden";
     }
     else{
-        charSprite.classList.remove("hidden");
+        theSprite.classList.remove("hidden");
         dialougeBox.classList.remove("hidden");
     }
 }
