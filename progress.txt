@@ -80,3 +80,8 @@
  -js for the customer order screen page(genCustomers(),genSess(),genOrder(),changeAcknowledgeButton())
  -6/12 customer drawings finished
  -3/7 food icons redone
+
+12/9/25
+ -edited character class
+ -js for the customer order screen page(genCustomers(),changeVisible())
+ -Css for the customer order screen page
