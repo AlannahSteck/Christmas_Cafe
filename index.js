@@ -193,7 +193,7 @@ function changeVisible(hide){
     }
 }
 
-function changeAcknowledgeButton(makeLink){
+function changeAcknowledgeButton(drinkMakerLink){
     const continueGame = document.getElementById("acknowledgeDialouge");
     try{
         continueGame.removeAttribute("onclick");
@@ -202,15 +202,23 @@ function changeAcknowledgeButton(makeLink){
 
     }
     continueGame.innerHTML = ''
-    if (makeLink==true){
+    if (drinkMakerLink==true){
         const drinkLink = document.createElement("a");
         drinkLink.href = "Pages/drinkMaker/drinkMaker.html";
         drinkLink.textContent = "ok";
         continueGame.appendChild(drinkLink);
     }
     else{
-        continueGame.textContent = "Next!"
-        continueGame.setAttribute("onclick", "changeToNext()");
+        if (sessionStorage.getItem("ordersLeft") == "0"){
+          const endLink = document.createElement("a");
+          endLink.href = "Pages/endDay/endDay.html";
+          endLink.textContent = "End Shift";
+          continueGame.appendChild(endLink); 
+        }
+        else{
+          continueGame.textContent = "Next!";
+          continueGame.setAttribute("onclick", "changeToNext()");
+        }
     }
 }
 

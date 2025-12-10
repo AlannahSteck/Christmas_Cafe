@@ -85,3 +85,9 @@
  -edited character class
  -js for the customer order screen page(genCustomers(),changeVisible())
  -Css for the customer order screen page
+ -7/12 customer drawings finished
+
+12/10/25
+ -Css for the end day page
+ -Html for the end day page
+ -Js for the end day page (saveAndClear(),genStats())

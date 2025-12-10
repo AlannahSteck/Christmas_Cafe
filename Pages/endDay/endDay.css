@@ -1,0 +1,47 @@
+*{
+    color: #7a3a2c;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    font-size: 175%;
+}
+
+h1{
+    font-family: Berkshire Swash;
+    text-decoration: underline;
+    font-size: 600%;
+}
+
+section{
+    background-color: black;
+    width: 35vw;
+}
+
+#textArea{
+    background-color: wheat;
+    width: 65vw;
+}
+
+section, #textArea{
+    height: 80vh;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+
+footer, main, body,h1{
+    margin: 0px;
+}
+
+p{
+    font-family: Snowburst One;
+}
+
+#continue{
+    font-family: Berkshire Swash;
+}
