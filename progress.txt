@@ -91,3 +91,10 @@
  -Css for the end day page
  -Html for the end day page
  -Js for the end day page (saveAndClear(),genStats())
+ -8/12 customer drawings finished
+
+12/11/25
+  -Css for the end day page
+  -Html for the end day page
+  -Js for the end day page (genStats())
+  -began testing cookies

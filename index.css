@@ -41,12 +41,12 @@ section, #spriteDiv{
     display: flex;
     justify-content: center;
     height: 75vh;
+
 }
 
 .sprite{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 25vh;
+    position: fixed;
+    bottom: 25vh;
 }
 
 #Tall{
@@ -76,6 +76,7 @@ section, #spriteDiv{
     width: 50vw;
     border-radius: 3vw;
     border: 0.75vh solid black;
+    position: fixed;
 }
 
 #acknowledgeDialouge{

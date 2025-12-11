@@ -1,6 +1,9 @@
 *{
-    color: #7a3a2c;
     text-align: center;
+}
+
+body{
+    background-image: linear-gradient(#875244,#a56459);
 }
 
 a{
@@ -12,16 +15,17 @@ h1{
     font-family: Berkshire Swash;
     text-decoration: underline;
     font-size: 600%;
+    color: #f2cdb6;
 }
 
 section{
-    background-color: black;
     width: 35vw;
 }
 
 #textArea{
-    background-color: wheat;
     width: 65vw;
+    flex-direction: column;
+    justify-items: center;
 }
 
 section, #textArea{
@@ -34,14 +38,32 @@ main{
 }
 
 
-footer, main, body,h1{
+footer, main, body,h1,p,h4{
     margin: 0px;
 }
 
 p{
     font-family: Snowburst One;
+    color: #d2977f;
 }
+
 
 #continue{
     font-family: Berkshire Swash;
 }
+
+.stat{
+    display: flex;
+    flex-direction: row;
+    font-size: 150%;
+    margin: 3.5vw 0vw;
+}
+
+h4{
+    font-family: Berkshire Swash;
+}
+
+a, h4{
+    color: #dfad94;
+}
+
