@@ -94,7 +94,25 @@
  -8/12 customer drawings finished
 
 12/11/25
-  -Css for the end day page
-  -Html for the end day page
-  -Js for the end day page (genStats())
-  -began testing cookies
+ -9/12 customer drawings finished
+ -Css for the end day page
+ -Html for the end day page
+ -Js for the end day page (genStats())
+ -began testing cookies
+
+12/12/25
+ -10/12 customer drawings finished
+ -added local storage
+ -Js for the end day page (genHeader(),updateLocal(),updateDays(),genStats())
+ -js for the customer order screen page(genCustomers(),genSess(),genOrder())
+ -Html for the end day page
+
+12/13/25
+ -12/12 customer drawings finished
+
+12/14/25
+ -7/7 food icons redone
+ -15/15 food icons finished
+
+12/15/25
+ -end day screen calender wiggle gifs
