@@ -60,7 +60,13 @@ p{
 }
 
 img{
-    size: 25%;
+    width: 37.5vw;
+    height: auto;
+    margin-left: 12.5vw;
+    filter: drop-shadow(3px 0vw 0vw rgb(210 151 127))
+    drop-shadow(-3px 0vw 0vw rgb(210 151 127))
+    drop-shadow(0vw 3px 0vw rgb(210 151 127))
+    drop-shadow(0vw -3px 0vw rgb(210 151 127));
 }
 
 

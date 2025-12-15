@@ -14,21 +14,31 @@ function updateLocal(statName){
 }
 
 function updateDays(){
-    const prevDays = Number(localStorage.getItem("daysLeft"))
+    const prevDays = Number(localStorage.getItem("daysWorked"))
     console.log(prevDays)
-    console.log(prevDays-1)
-    localStorage.setItem("daysLeft",prevDays-1)
+    console.log(prevDays+1)
+    localStorage.setItem("daysWorked",prevDays+1)
+    localStorage.setItem("newDay","f")
+    localStorage.setItem("calLink",`../../Resources/endDay/cal_${prevDays+1}.gif`);
 }
 
 function genHeader(){
     const heading = document.getElementById("heading");
+    if (localStorage.getItem("newDay") == "t"){
     updateDays();
-    const days = 7-Number(localStorage.getItem("daysLeft"))
+    }
+    const days = Number(localStorage.getItem("daysWorked"))
     console.log(days)
     console.log(localStorage)
     heading.textContent = "Day " + days  + " Shift Stats"
 
 }
+
+function updateCal(){
+    const theImg = document.getElementsByTagName("img")[0];
+    theImg.src = localStorage.getItem("calLink");
+}
+
 
 function genStats(){
     const getThese = ["goodOrds_s","okOrds_s", "badOrds_s","goodOrds_l", "okOrds_l", "badOrds_l"];

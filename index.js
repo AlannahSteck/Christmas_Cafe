@@ -59,12 +59,10 @@ function genCustomers(){
 function genSess(){
     const customersStorage = genCustomers()
     if(sessionStorage.length == 0){
-        try{
-            localStorage.getItem("daysLeft")
-            console.log("Not Set local")
-        }
-        catch{
-            localStorage.setItem("daysLeft",7)
+        localStorage.setItem("newDay","t")
+        console.log(localStorage)
+        if (localStorage.getItem("daysWorked") == null){
+            localStorage.setItem("daysWorked",0)
             console.log("Set local")
         }
         console.log(localStorage)

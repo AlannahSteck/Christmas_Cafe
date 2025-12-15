@@ -55,13 +55,13 @@
  -7/15 food icons finished
  -2/2 counter bgs finished
  -Css for the customer order screen page
- -js for the customer order screen page(genOrder(),gradeOrder(),changeOrder())
+ -Js for the customer order screen page(genOrder(),gradeOrder(),changeOrder())
  -Css for the drink maker screen page
- -html for the drink maker screen page
- -js for the drink maker screen page (genSelections(),addToDrink(),finalArrow(),findSelection(),doneButton())
+ -Html for the drink maker screen page
+ -Js for the drink maker screen page (genSelections(),addToDrink(),finalArrow(),findSelection(),doneButton())
 
 11/27/25
- -js for the drink maker screen page (genSelections(),addToDrink(),finalArrow())
+ -Js for the drink maker screen page (genSelections(),addToDrink(),finalArrow())
 
 12/4/25
  -upload files to vs code
@@ -70,20 +70,20 @@
 
 12/5/25
  -created character class
- -js for the customer order screen page(genCustomers(),genSess())
+ -Js for the customer order screen page(genCustomers(),genSess())
 
 12/7/25
  -3/12 customer drawings finished
 
 12/8/25
  -edited character class
- -js for the customer order screen page(genCustomers(),genSess(),genOrder(),changeAcknowledgeButton())
+ -Js for the customer order screen page(genCustomers(),genSess(),genOrder(),changeAcknowledgeButton())
  -6/12 customer drawings finished
  -3/7 food icons redone
 
 12/9/25
  -edited character class
- -js for the customer order screen page(genCustomers(),changeVisible())
+ -Js for the customer order screen page(genCustomers(),changeVisible())
  -Css for the customer order screen page
  -7/12 customer drawings finished
 
@@ -116,3 +116,7 @@
 
 12/15/25
  -end day screen calender wiggle gifs
+ -Js for the order screen page (genSess())
+ -Js for the end day page(updateDays(),genHeader(),updateCal())
+ -Html for the end day page
+ -Css for the end day page
