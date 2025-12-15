@@ -50,4 +50,5 @@ function genStats(){
 
 function saveAndClear(){
     sessionStorage.clear()
+    localStorage.clear()
 }
