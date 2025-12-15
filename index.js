@@ -1,5 +1,4 @@
-//sess storage should be [ordersLeft, goodOrds, okOrds, badOrds, requestedSize, requestedChocolate, requestedToppings, requestedAddons, selectedSize(=medium), selectedChocolate(=milk), selectedToppings(=none), selectedAddons(=none)]
-//sess storage should be reset after each order except keys 1-4 which reset each after a day and are saved to cookies
+
 const textbox = document.getElementById("dialouge");
 const customerName = document.getElementsByTagName("h1")[0];
 const theSprite = document.getElementsByClassName("sprite")[0];
@@ -42,15 +41,13 @@ class Customer{
 
     getImgLink(){
       const linkName = this.name.replaceAll(" ","_");
-      console.log(linkName)
       return "Resources/order/" + linkName + ".png";
     }
 }
 
 function genCustomers(){
     let customersStorage = []
-    const names = ["Conner-Medium","Lily-Medium","Yule Cat-Tall","Frosty the Snowman-Medium","Santa-Tall","Hermey the Elf-Medium","Gingerbread Man-Small","Rudolph-Tall","Turtle Dove-Small","Ferret Guy-Small"];
-    //const names = ["Mrs Claus-Tall","The Grinch-Tall"];
+    const names = ["Conner-Medium","Lily-Medium","Yule Cat-Tall","Frosty the Snowman-Medium","Santa-Tall","Hermey the Elf-Medium","Gingerbread Man-Small","Rudolph-Tall","Turtle Dove-Small","Ferret Guy-Small","Mrs Claus-Tall","The Grinch-Tall"];
     for (let i=0;i<names.length;i++){
         const dataList = names[i].split("-");
         const newGuy = new Customer(dataList[0],dataList[1])
@@ -64,10 +61,13 @@ function genSess(){
     if(sessionStorage.length == 0){
         try{
             localStorage.getItem("daysLeft")
+            console.log("Not Set local")
         }
         catch{
             localStorage.setItem("daysLeft",7)
+            console.log("Set local")
         }
+        console.log(localStorage)
         const addKeys  = ["ordersLeft", "goodOrds", "okOrds", "badOrds", "requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons", "selectedSize", "selectedChocolate", "selectedToppings", "selectedAddons","customer"];
         for (let i=0;i<addKeys.length;i++){
             if (i==0){
@@ -82,13 +82,12 @@ function genSess(){
             sessionStorage.setItem(addKeys[i],val);
         }
     }
-    console.log(sessionStorage);
+
     getCustomer(customersStorage)
 }
 
 function getCustomer(customersStorage){
     if (sessionStorage.getItem("customer") == "null"){
-        console.log("new customer exists")
         const theIndex = Math.floor(Math.random() * customersStorage.length); 
         var chosen = customersStorage[theIndex]
         sessionStorage.setItem("customer", theIndex)
@@ -96,7 +95,6 @@ function getCustomer(customersStorage){
     else{
         const theIndex = Number(sessionStorage.getItem("customer"))
         var chosen = customersStorage[theIndex]
-        console.log("old customer")
     }
     customerName.textContent = chosen.giveName()
     theSprite.src = chosen.giveImgLink()
@@ -115,7 +113,6 @@ function genOrder(){
     const requestedSess = ["requestedSize", "requestedChocolate", "requestedToppings", "requestedAddons"]
     let order = []
     for (let i=0;i<allOpts.length;i++){
-        console.log(`catergory ${i}`);
         currentOpts =[];
         for (let otherI=0;otherI<allOpts[i].length;otherI++){ //naming style inspired by Jonas //// adds undefined for last index 1-3
             const option = allOpts[i][otherI].split("-")
@@ -123,11 +120,9 @@ function genOrder(){
             const newOpt = new Item(option[0],optDesc); //add more descriptions later
             currentOpts.push(newOpt)
         }
-        console.log(currentOpts);
         const randIndex = Math.floor(Math.random() * currentOpts.length); 
         const orderedChoice = currentOpts[randIndex];
         sessionStorage.setItem(requestedSess[i],orderedChoice.giveName())
-        console.log(sessionStorage);
         order.push(orderedChoice.describeProduct());
     }
     changeOrder(order); //change to improve dialouge
@@ -154,7 +149,6 @@ function gradeOrder(){
             score++;
         }
     }
-    console.log
     if (score == 4){
         var responses = ["Oh thank you hun! It's perfect.","MMM! This is delicious! Thanks!","WOW! this drink tastes so good! It's gonna make my day 3x better! Thanks!","Where did you learn to make hot chocolate like this? This tastes wonderful!","Not bad. I hope you get a raise."];
         var rank = "goodOrds";
@@ -172,7 +166,6 @@ function gradeOrder(){
     let newRank = Number(sessionStorage.getItem(rank));
     newRank++;
     sessionStorage.setItem(rank, newRank);
-    console.log(sessionStorage)
 
 
 }

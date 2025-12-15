@@ -1,6 +1,7 @@
 const textArea = document.getElementById("textArea");
 
 function updateLocal(statName){
+    console.log(localStorage)
     try{
         var prevStat = Number(localStorage.getItem(statName));
     }
@@ -9,10 +10,13 @@ function updateLocal(statName){
     }
     const shiftStat = Number(sessionStorage.getItem(statName))
     localStorage.setItem(statName,shiftStat+prevStat)
+    console.log(localStorage)
 }
 
 function updateDays(){
     const prevDays = Number(localStorage.getItem("daysLeft"))
+    console.log(prevDays)
+    console.log(prevDays-1)
     localStorage.setItem("daysLeft",prevDays-1)
 }
 
@@ -20,6 +24,8 @@ function genHeader(){
     const heading = document.getElementById("heading");
     updateDays();
     const days = 7-Number(localStorage.getItem("daysLeft"))
+    console.log(days)
+    console.log(localStorage)
     heading.textContent = "Day " + days  + " Shift Stats"
 
 }
@@ -44,7 +50,6 @@ function genStats(){
         textDiv.appendChild(stat)
         textDiv.className = "stat";
         textArea.appendChild(textDiv)
-
     }
 }
 
