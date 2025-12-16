@@ -58,6 +58,7 @@ function doneButton(){
     backToOrder.href = "../../index.html"
     finalIcon.alt = "Done";
     finalIcon.src = "../../Resources/drinkMaker/nonDrinks/done.png";
+    finalIcon.id = "doneIcon"
     backToOrder.appendChild(finalIcon);
     footer.appendChild(backToOrder);
 }

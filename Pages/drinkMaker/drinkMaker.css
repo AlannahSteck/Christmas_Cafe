@@ -52,3 +52,8 @@ p{
     text-align: center;
     margin: 0;
 }
+
+#doneIcon{
+    height: 11vw;
+    width: 12vw;
+}
