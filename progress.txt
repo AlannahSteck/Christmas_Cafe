@@ -120,3 +120,8 @@
  -Js for the end day page(updateDays(),genHeader(),updateCal())
  -Html for the end day page
  -Css for the end day page
+
+12/16/25
+ -updated arrow and done icons for drink maker page
+ -Js for the end day page(saveAndClear())
+ -Js for the game end page(calculateEndType())
