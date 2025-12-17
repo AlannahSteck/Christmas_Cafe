@@ -1,4 +1,9 @@
 
+body{
+    background-image: url("Resources/order/bg.png");
+    background-size: 100vw 75vh;
+}
+
 h1{
     font-family: Berkshire Swash;
     text-decoration: underline;
