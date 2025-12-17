@@ -179,14 +179,17 @@ function afterOrderSess(){
 }
 
 function changeVisible(hide){
-    const dialougeBox = document.getElementById("textBox");
+    const dialougeBox = document.getElementById("textBox");4
+    const respondBox = document.getElementById("respond");
     if (hide==true){
         theSprite.classList.add("hidden");
         dialougeBox.className = "hidden";
+        respondBox.className = "hidden";
     }
     else{
         theSprite.classList.remove("hidden");
         dialougeBox.classList.remove("hidden");
+        respondBox.classList.remove("hidden");
     }
 }
 

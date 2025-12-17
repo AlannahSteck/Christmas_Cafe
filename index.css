@@ -1,12 +1,23 @@
+*{
+    color: #553622;
+}
 
+body{
+    background-image: url("Resources/order/Bg.png");
+    background-size: 100vw 75vh;
+}
 h1{
     font-family: Berkshire Swash;
     text-decoration: underline;
     font-size: 400%;
+    -webkit-text-stroke: 0.25vh #534333;
+    color: #735e3f;
+    margin: 0vh 0vh 0vh 1.5vh;
 }
 
 p{
     font-family: Snowburst One;
+    flex-wrap: wrap;
 }
 
 main{
@@ -33,7 +44,7 @@ footer{
     border-top: 0.75vh solid #553622;
 }
 
-footer, main, body,h1{
+footer, main, body{
     margin: 0px;
 }
 
@@ -66,30 +77,53 @@ section, #spriteDiv{
 
 
 #textBox{
-    margin-top: 15vh;
-    margin-left:8vw;
     display: flexbox;
     justify-self: center;
     align-self: center;
-    background-color: gray;
-    height: 50vh;
+    height: 35vh;
     width: 50vw;
+}
+
+#respond{
+    width: 25vw;
+    height: 10vh;
+    top: 58vh;
+    font-size: 350%;
+    
+}
+
+#respond, #textBox{
+    border: 0.75vh solid #553622;
+    background-color: #f5e8cf;
     border-radius: 3vw;
-    border: 0.75vh solid black;
     position: fixed;
+    margin-left:8vw;
+    
 }
 
 #acknowledgeDialouge{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin: 0;
+    font-family: Berkshire Swash;
+    -webkit-text-stroke: 0.25vh #534333;
+    color: #735e3f;
 }
 
 #dialouge{
     height: 25vh;
     width: 50vw;
     flex-wrap: wrap;
+    -webkit-text-stroke: 0.1vh #553622;
+    color: #553622;
 }
 
 .hidden{
     visibility: hidden;
+}
+
+a{
+    text-decoration: none;
+    -webkit-text-stroke: 0.25vh #534333;
+    color: #735e3f;
 }
