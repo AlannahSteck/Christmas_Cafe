@@ -65,5 +65,8 @@ function genStats(){
 
 function saveAndClear(){
     sessionStorage.clear()
-    localStorage.clear()
+    if (Number(localStorage.getItem("daysWorked")) == 7){
+       const theLink = document.getElementsByTagName("a")[0]; 
+       theLink.href = "../gameEnd/gameEnd.html"
+    }
 }
