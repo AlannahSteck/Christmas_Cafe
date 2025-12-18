@@ -3,16 +3,10 @@
 }
 
 body{
-<<<<<<< HEAD
-    background-image: url("Resources/order/Bg.png");
-    background-size: 100vw 75vh;
-}
-=======
     background-image: url("Resources/order/bg.png");
     background-size: 100vw 75vh;
 }
 
->>>>>>> a528768721defb9dd472f4d4446258d5a25182e0
 h1{
     font-family: Berkshire Swash;
     text-decoration: underline;

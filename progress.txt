@@ -125,3 +125,19 @@
  -updated arrow and done icons for drink maker page
  -Js for the end day page(saveAndClear())
  -Js for the game end page(calculateEndType())
+
+12/17/25
+ -Css for the order page
+ -Html for the Game End page
+ -Css for the Game End page
+ -Js for the Game End page(calculateEndType())
+ -Html for the title page
+ -Css for the title page
+ -Js for the title page(oldGameAllowed)
+
+12/18/25
+ -Html for the Game End page
+ -Css for the Game End page
+ -Js for the Game End page(calculateEndType(),makeEnd(),changeHeading(),changeText(),resetStorage())
+ -Html for the title page
+ -Css for the title page
